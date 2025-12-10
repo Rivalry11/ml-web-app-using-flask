@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request
-import numpy as np
-import pandas as pd
 import pickle
 import os
+import pandas as pd
 
 app = Flask(__name__)
 
-# Cargar modelo
+# Cargar el modelo
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 
@@ -32,7 +31,7 @@ def predict():
         "children": children,
         "sex": sex,
         "smoker": smoker,
-        "region": region
+        "region": region,
     }])
 
     prediction = model.predict(df)[0]
