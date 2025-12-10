@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Seguro Médico</title>
+    <link rel="stylesheet" href="/workspaces/ml-web-app-using-flask/flask-app/static/styles.css">
+</head>
+<body>
+    <h1>Predicción del Costo del Seguro Médico</h1>
+
+    <form action="/predict" method="POST">
+
+        <label>Edad:</label>
+        <input type="number" name="age" required>
+
+        <label>BMI:</label>
+        <input type="number" step="0.1" name="bmi" required>
+
+        <label>Número de hijos:</label>
+        <input type="number" name="children" required>
+
+        <label>Sexo:</label>
+        <select name="sex">
+            <option value="male">Hombre</option>
+            <option value="female">Mujer</option>
+        </select>
+
+        <label>Fumador:</label>
+        <select name="smoker">
+            <option value="yes">Sí</option>
+            <option value="no">No</option>
+        </select>
+
+        <label>Región:</label>
+        <select name="region">
+            <option value="southwest">Southwest</option>
+            <option value="southeast">Southeast</option>
+            <option value="northwest">Northwest</option>
+            <option value="northeast">Northeast</option>
+        </select>
+
+        <button type="submit">Predecir</button>
+    </form>
+
+</body>
+</html>
